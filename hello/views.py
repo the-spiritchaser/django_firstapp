@@ -5,14 +5,13 @@ def index(request):
     params = {
         'title':'Hello/Index',
         'msg':'サンプルページです',
-        'goto':'next',
     }
     return render(request, 'hello/index.html', params)
 
-def next(request):
+def form(request):
+    msg = request.POST['msg']
     params = {
-            'title':'Hello/Next',
-            'msg':'これは、もう１つのページです。',
-            'goto':'index',
-        }
+        'title':'Hello/Form',
+        'msg':msg + 'さん、こんあくあ〜',
+    }
     return render(request, 'hello/index.html', params)
