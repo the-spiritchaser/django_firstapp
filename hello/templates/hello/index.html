@@ -8,28 +8,16 @@
         href="{% static 'hello/css/style.css' %}" />
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <p>{{message|safe}}</p>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>GENDER</th>
-            <th>MAIL</th>
-            <th>AGE</th>
-            <th>BIRTHDAY</th>
-        </tr>
-    {% for item in data %}
-        <tr>
-            <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
-            <td>{% if item.gender == True %}male{% endif %}
-                {% if item.gender == False %}female{% endif %}</td>
-            <td>{{item.mail}}</td>
-            <td>{{item.age}}</td>
-            <td>{{item.birthday}}</td>
-        <tr>
-    {% endfor %}
-    </table>
+  <h1>{{title}}</h1>
+  <table>
+      <tr>
+          <th>data</th>
+      </tr>
+  {% for item in data %}
+      <tr>
+          <td>{{item}}</td>
+      <tr>
+  {% endfor %}
+  </table>
 </body>
 </html>
