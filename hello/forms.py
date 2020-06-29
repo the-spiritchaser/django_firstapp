@@ -12,3 +12,6 @@ class HelloForm(forms.Form):
     gender = forms.BooleanField(label='Gender',required=False)
     age = forms.IntegerField(label='Age')
     birthday = forms.DateField(label='Birth')
+
+class FindForm(forms.Form):
+    find = forms.CharField(label='Find', required=False)
