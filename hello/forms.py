@@ -15,3 +15,6 @@ class HelloForm(forms.Form):
 
 class FindForm(forms.Form):
     find = forms.CharField(label='Find', required=False)
+
+class CheckForm(forms.Form):
+    str = forms.CharField(label='Name')
