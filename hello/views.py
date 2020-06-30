@@ -6,10 +6,11 @@ from .forms import FriendForm
 from .forms import FindForm
 
 def index(request):
-    data = Friend.objects.all()
+    data = Friend.objects.all().order_by('age')
     params = {
             'title': 'Hello',
             'data': data,
+            'message':'',
         }
     return render(request, 'hello/index.html', params)
 
