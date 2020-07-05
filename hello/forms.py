@@ -1,5 +1,5 @@
 from django import forms
-from.models import Friend
+from.models import Friend, Message
 
 class FriendForm(forms.ModelForm):
     class Meta:
@@ -20,3 +20,8 @@ class CheckForm(forms.Form):
     empty = forms.CharField(label='Empty', empty_value=True)
     min = forms.CharField(label='Min', min_length=10)
     max = forms.CharField(label='Max', max_length=10)
+
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['title', 'content', 'friend']
