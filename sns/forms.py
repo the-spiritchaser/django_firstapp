@@ -17,3 +17,7 @@ class FriendForm(forms.ModelForm):
         model = Friend
         fields = ['owner', 'user', 'group']
 
+class GoodForm(forms.ModelForm):
+    class Meta:
+        model = Good
+        fields = ['owner', 'message']
