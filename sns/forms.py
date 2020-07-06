@@ -52,3 +52,6 @@ class FriendsForm(forms.Form):
             initial=vals
         )
 
+class CreateGroupForm(forms.Form):
+    group_name = forms.CharField(max_length=50)
+
