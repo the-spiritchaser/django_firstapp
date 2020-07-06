@@ -25,3 +25,12 @@ class GoodForm(forms.ModelForm):
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=100)
 
+class GroupCheckForm(forms.Form):
+    def __init__(self, user, *args, **kwargs):
+        super(GroupCheckForm, self).__init__(*args, **kwargs)
+        public = User.objects.filter(username='public').first()
+        self.fields['groups'] = forms.MultipleChoiceField(
+            choices=[(item.title, item.title) for item in \
+                 Group.objects.filter(owner__in=[user,public])],
+            widget=forms.CheckboxSelectMultiple(),
+        )
