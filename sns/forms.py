@@ -21,3 +21,7 @@ class GoodForm(forms.ModelForm):
     class Meta:
         model = Good
         fields = ['owner', 'message']
+
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=100)
+
