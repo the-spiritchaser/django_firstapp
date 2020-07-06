@@ -12,3 +12,8 @@ class GroupForm(forms.ModelForm):
         model = Group
         fields = ['owner', 'title']
 
+class FriendForm(forms.ModelForm):
+    class Meta:
+        model = Friend
+        fields = ['owner', 'user', 'group']
+
