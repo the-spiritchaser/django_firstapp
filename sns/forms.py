@@ -43,3 +43,12 @@ class GroupSelectForm(forms.Form):
                  for item in Group.objects.filter(owner=user)],
         )
 
+class FriendsForm(forms.Form):
+    def __init__(self, user, friends=[], vals=[], *args, **kwargs):
+        super(FriendsForm, self).__init__(*args, **kwargs)
+        self.fields['friends'] = forms.MultipleChoiceField(
+            choices=[(item.user, item.user) for item in friends],
+            widget=forms.CheckboxSelectMultiple(),
+            initial=vals
+        )
+
