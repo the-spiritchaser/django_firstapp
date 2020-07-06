@@ -6,3 +6,9 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
         fields = ['owner','group','content']
+
+class GroupForm(forms.ModelForm):
+    class Meta:
+        model = Group
+        fields = ['owner', 'title']
+
