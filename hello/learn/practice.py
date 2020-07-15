@@ -23,3 +23,12 @@ elif res == 3:
 else:
     season  = '？'
 str(month) + '月は、' + season + 'です。'
+
+# while文
+end = 100
+total = 0
+count = 1
+while count <= end:
+    total += count
+    count+= 1
+'１から' + str(end) + 'までの合計は、' + str(total) + 'です。'
