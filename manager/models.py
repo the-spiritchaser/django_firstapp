@@ -18,7 +18,7 @@ class Anime(models.Model):
 
     week = models.IntegerField(editable=False)
 
-    studio = models.ForeignKey('Studio')
+    studio = models.ForeignKey(Studio, on_delete=models.CASCADE)
 
 
 class Studio(models.Model):
